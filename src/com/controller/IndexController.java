@@ -1,18 +1,31 @@
 package com.controller;
 
-
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.dom4j.rule.Mode;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
-public class IndexController implements Controller {
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("1111111111");
-        ModelAndView mav = new ModelAndView("enter");
-        mav.addObject("message", "Hello Spring MVC");
-        return mav;
+
+/**
+ * Created by byebyejude on 2017/9/9.
+ */
+@Controller
+@RequestMapping("")
+public class IndexController {
+
+    @RequestMapping("mew")
+    public ModelAndView contorller(ModelAndView mav) {
+        System.out.println("1111111111111111111111111111111");
+       //   ModelAndView mav = new ModelAndView();
+        mav.addObject("message","mew!!!!!!!!!!!!!");
+        mav.setViewName("mew");
+          return mav;
+
     }
+
+
+
 }
+
