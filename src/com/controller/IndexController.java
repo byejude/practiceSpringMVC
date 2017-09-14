@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.ResourceMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Created by byebyejude on 2017/9/9.
@@ -41,6 +43,15 @@ public class IndexController {
 
     }
 
-
+    @RequestMapping("/check")
+    public ModelAndView check(HttpSession session) {
+        Integer i = (Integer) session.getAttribute("count");
+        if (i == null)
+            i = 0;
+        i++;
+        session.setAttribute("count", i);
+        ModelAndView mav = new ModelAndView("check");
+        return mav;
+    }
 }
 
