@@ -1,10 +1,12 @@
 package com.controller;
 
+import com.pojo.Product;
 import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.portlet.bind.annotation.ResourceMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -25,6 +27,19 @@ public class IndexController {
 
     }
 
+    @RequestMapping("/addProduct")
+    public ModelAndView add(Product product) throws Exception {
+        ModelAndView mav = new ModelAndView("showProduct");
+        return mav;
+    }
+
+    @ResourceMapping("/jump")
+    public ModelAndView jump() throws  Exception{
+        ModelAndView mav = new ModelAndView("mew");
+        return  mav;
+
+
+    }
 
 
 }
