@@ -22,10 +22,10 @@
 
     <mvc:default-servlet-handler />
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
     <!-- 视图定位 -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
